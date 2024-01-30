@@ -20,14 +20,14 @@ namespace ClasseFrazione
         
         public void Inserimento()
         {
-                frazione.Numeratore = float.Parse(textBox1.Text);
-                frazione.Denominatore = float.Parse(textBox2.Text);
+            frazione.Numeratore = float.Parse(textBox1.Text);
+            frazione.Denominatore = float.Parse(textBox2.Text);
         }
 
         private void bttn_somma_Click(object sender, EventArgs e)
         {
             Inserimento();
-            float somma = 0;
+            float somma;
             
             somma = frazione.Numeratore + frazione.Denominatore;
 
@@ -38,6 +38,7 @@ namespace ClasseFrazione
 
         private void bttn_sottr_Click(object sender, EventArgs e)
         {
+            Inserimento();
             float sottraz;
 
             sottraz = frazione.Numeratore - frazione.Denominatore;
@@ -49,6 +50,7 @@ namespace ClasseFrazione
 
         private void bttn_moltip_Click(object sender, EventArgs e)
         {
+            Inserimento();
             float moltipl;
 
             moltipl = frazione.Numeratore * frazione.Denominatore;
@@ -60,6 +62,7 @@ namespace ClasseFrazione
 
         private void button4_Click(object sender, EventArgs e)
         {
+            Inserimento();
             float divis;
 
             divis = frazione.Numeratore / frazione.Denominatore;
@@ -71,22 +74,35 @@ namespace ClasseFrazione
 
         private void bttn_sempl_Click(object sender, EventArgs e)
         {
-            int n=1;
-            for ( int i = 1; i < frazione.Numeratore; i++ )
-            {
-                if( frazione.Numeratore % i==0 )
-                {
-                    n=i;
-                }
-                if( frazione.Denominatore % n ==0)
-                {
-                    frazione.Numeratore /= n;
-                    frazione.Denominatore /= n;
-                }
-            }
+            Inserimento();
 
-            textBox1.Text = frazione.Numeratore.ToString();
-            textBox2.Text = frazione.Denominatore.ToString();
+            int n=1;
+            bool c=false;
+            while(c==false)
+            {
+                for (int i = 1; i < frazione.Numeratore; i++)
+                {
+                    if (frazione.Numeratore % i == 0)
+                    {
+                        n = i;
+
+                        if (frazione.Denominatore % n == 0)
+                        {
+                            frazione.Numeratore /= n;
+                            frazione.Denominatore /= n;
+                        }
+                    }
+
+                }
+                if(frazione.Numeratore % frazione.Denominatore !=0 || frazione.Denominatore % frazione.Numeratore != 0)
+                {
+                    c = true;
+
+                }
+                textBox1.Text = frazione.Numeratore.ToString();
+                textBox2.Text = frazione.Denominatore.ToString();
+            }
+            
         }
     }
 }

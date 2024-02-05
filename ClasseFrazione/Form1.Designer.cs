@@ -35,6 +35,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.bttn_sempl = new System.Windows.Forms.Button();
+            this.txt_decimale = new System.Windows.Forms.TextBox();
+            this.lbl_decimale = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -101,11 +103,29 @@
             this.bttn_sempl.UseVisualStyleBackColor = true;
             this.bttn_sempl.Click += new System.EventHandler(this.bttn_sempl_Click);
             // 
+            // txt_decimale
+            // 
+            this.txt_decimale.Location = new System.Drawing.Point(145, 213);
+            this.txt_decimale.Name = "txt_decimale";
+            this.txt_decimale.Size = new System.Drawing.Size(26, 20);
+            this.txt_decimale.TabIndex = 7;
+            // 
+            // lbl_decimale
+            // 
+            this.lbl_decimale.AutoSize = true;
+            this.lbl_decimale.Location = new System.Drawing.Point(142, 197);
+            this.lbl_decimale.Name = "lbl_decimale";
+            this.lbl_decimale.Size = new System.Drawing.Size(92, 13);
+            this.lbl_decimale.TabIndex = 8;
+            this.lbl_decimale.Text = "Numero decimale:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_decimale);
+            this.Controls.Add(this.txt_decimale);
             this.Controls.Add(this.bttn_sempl);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button4);
@@ -129,6 +149,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button bttn_sempl;
+        private System.Windows.Forms.TextBox txt_decimale;
+        private System.Windows.Forms.Label lbl_decimale;
     }
 }
 

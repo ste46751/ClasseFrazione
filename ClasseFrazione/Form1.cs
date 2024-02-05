@@ -22,6 +22,13 @@ namespace ClasseFrazione
         {
             frazione.Numeratore = float.Parse(textBox1.Text);
             frazione.Denominatore = float.Parse(textBox2.Text);
+
+            int dec = int.Parse(textBox1.Text);
+            int dec2 = int.Parse(textBox2.Text);
+
+            int decim = dec / dec2;
+            txt_decimale.Text= decim.ToString();
+
         }
 
         private void bttn_somma_Click(object sender, EventArgs e)
@@ -71,26 +78,36 @@ namespace ClasseFrazione
             textBox1.Text = "0";
             textBox2.Text = "0";
         }
+        public float TrovaMAx(float num, float den)
+        {
+            float n;
+            if(num >= den)
+            {
+                n = num;
+            }
+            else
+            {
+                n= den;
+            }
+            return n;
+        }
 
         private void bttn_sempl_Click(object sender, EventArgs e)
         {
             Inserimento();
 
             int n=1;
+            float max = TrovaMAx(frazione.Numeratore, frazione.Denominatore);
             bool c=false;
             while(c==false)
             {
-                for (int i = 1; i < frazione.Numeratore; i++)
+                for (int i = 1; i < max; i++)
                 {
-                    if (frazione.Numeratore % i == 0)
+                    if (frazione.Numeratore % i==0 && frazione.Denominatore % i == 0)
                     {
                         n = i;
-
-                        if (frazione.Denominatore % n == 0)
-                        {
-                            frazione.Numeratore /= n;
-                            frazione.Denominatore /= n;
-                        }
+                        frazione.Numeratore /= n;
+                        frazione.Denominatore /= n;
                     }
 
                 }
@@ -99,8 +116,16 @@ namespace ClasseFrazione
                     c = true;
 
                 }
+                if(frazione.Numeratore == frazione.Denominatore)
+                {
+                    frazione.Numeratore = 1;
+                    frazione.Denominatore = 1;
+                    c = true;
+                }
                 textBox1.Text = frazione.Numeratore.ToString();
                 textBox2.Text = frazione.Denominatore.ToString();
+
+                max = TrovaMAx(frazione.Numeratore, frazione.Denominatore);
             }
             
         }

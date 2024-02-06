@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,10 +24,10 @@ namespace ClasseFrazione
             frazione.Numeratore = float.Parse(textBox1.Text);
             frazione.Denominatore = float.Parse(textBox2.Text);
 
-            int dec = int.Parse(textBox1.Text);
-            int dec2 = int.Parse(textBox2.Text);
+            float dec = float.Parse(textBox1.Text);
+            float dec2 = float.Parse(textBox2.Text);
 
-            int decim = dec / dec2;
+            float decim = dec / dec2;
             txt_decimale.Text= decim.ToString();
 
         }
@@ -39,8 +40,8 @@ namespace ClasseFrazione
             somma = frazione.Numeratore + frazione.Denominatore;
 
             MessageBox.Show($"Il risultato è:{somma}");
-            textBox1.Text = "0";
-            textBox2.Text = "0";
+            textBox1.Text = "";
+            textBox2.Text = "";
         }
 
         private void bttn_sottr_Click(object sender, EventArgs e)
@@ -51,8 +52,8 @@ namespace ClasseFrazione
             sottraz = frazione.Numeratore - frazione.Denominatore;
 
             MessageBox.Show($"Il risultato è:{sottraz}");
-            textBox1.Text = "0";
-            textBox2.Text = "0";
+            textBox1.Text = "";
+            textBox2.Text = "";
         }
 
         private void bttn_moltip_Click(object sender, EventArgs e)
@@ -63,8 +64,8 @@ namespace ClasseFrazione
             moltipl = frazione.Numeratore * frazione.Denominatore;
 
             MessageBox.Show($"Il risultato è:{moltipl}");
-            textBox1.Text = "0";
-            textBox2.Text = "0";
+            textBox1.Text = "";
+            textBox2.Text = "";
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -75,8 +76,8 @@ namespace ClasseFrazione
             divis = frazione.Numeratore / frazione.Denominatore;
 
             MessageBox.Show($"Il risultato è:{divis}");
-            textBox1.Text = "0";
-            textBox2.Text = "0";
+            txt_decins.Text = "";
+            txt_decins.Text = "";
         }
         public float TrovaMAx(float num, float den)
         {
@@ -127,7 +128,34 @@ namespace ClasseFrazione
 
                 max = TrovaMAx(frazione.Numeratore, frazione.Denominatore);
             }
-            
+        }
+
+        private void bttn_convers_Click(object sender, EventArgs e)
+        {
+            string d =txt_decins.Text;
+            float dec = float.Parse(txt_decins.Text);
+            int c = 1;
+            string[] subs = d.Split(',');
+
+            for(int i = 0; i < subs[1].Length; i++) 
+            {
+                c*=10;
+            }
+            float n = dec * c;
+            textBox1.Text = (n).ToString();
+            textBox2.Text = (c).ToString();
+
+            txt_decins.Text = "";
+        }
+
+        private void bttn_elev_Click(object sender, EventArgs e)
+        {
+            Inserimento();
+            int ele = int.Parse(txt_ele.Text);
+
+            textBox1.Text=(Math.Pow(frazione.Numeratore, ele)).ToString();
+            textBox2.Text = (Math.Pow(frazione.Denominatore, ele)).ToString();
+
         }
     }
 }
@@ -140,13 +168,11 @@ namespace ClasseFrazione
         {
             get { return _numeroratore; }
             set { _numeroratore = value; }
-            
         }
 
         public float Denominatore
         {
             get { return _denominatore; }
             set { _denominatore = value; }
-
         }
     }

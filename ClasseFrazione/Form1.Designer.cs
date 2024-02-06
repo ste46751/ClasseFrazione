@@ -37,18 +37,23 @@
             this.bttn_sempl = new System.Windows.Forms.Button();
             this.txt_decimale = new System.Windows.Forms.TextBox();
             this.lbl_decimale = new System.Windows.Forms.Label();
+            this.bttn_convers = new System.Windows.Forms.Button();
+            this.txt_decins = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bttn_elev = new System.Windows.Forms.Button();
+            this.txt_ele = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(145, 84);
+            this.textBox1.Location = new System.Drawing.Point(313, 103);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(26, 20);
             this.textBox1.TabIndex = 0;
             // 
             // bttn_somma
             // 
-            this.bttn_somma.Location = new System.Drawing.Point(214, 84);
+            this.bttn_somma.Location = new System.Drawing.Point(382, 100);
             this.bttn_somma.Name = "bttn_somma";
             this.bttn_somma.Size = new System.Drawing.Size(75, 23);
             this.bttn_somma.TabIndex = 1;
@@ -58,7 +63,7 @@
             // 
             // bttn_sottr
             // 
-            this.bttn_sottr.Location = new System.Drawing.Point(317, 84);
+            this.bttn_sottr.Location = new System.Drawing.Point(485, 100);
             this.bttn_sottr.Name = "bttn_sottr";
             this.bttn_sottr.Size = new System.Drawing.Size(75, 23);
             this.bttn_sottr.TabIndex = 2;
@@ -68,7 +73,7 @@
             // 
             // bttn_moltip
             // 
-            this.bttn_moltip.Location = new System.Drawing.Point(214, 122);
+            this.bttn_moltip.Location = new System.Drawing.Point(382, 138);
             this.bttn_moltip.Name = "bttn_moltip";
             this.bttn_moltip.Size = new System.Drawing.Size(75, 23);
             this.bttn_moltip.TabIndex = 3;
@@ -78,7 +83,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(317, 122);
+            this.button4.Location = new System.Drawing.Point(485, 138);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 4;
@@ -88,14 +93,14 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(145, 122);
+            this.textBox2.Location = new System.Drawing.Point(313, 138);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(26, 20);
             this.textBox2.TabIndex = 5;
             // 
             // bttn_sempl
             // 
-            this.bttn_sempl.Location = new System.Drawing.Point(214, 163);
+            this.bttn_sempl.Location = new System.Drawing.Point(382, 179);
             this.bttn_sempl.Name = "bttn_sempl";
             this.bttn_sempl.Size = new System.Drawing.Size(124, 23);
             this.bttn_sempl.TabIndex = 6;
@@ -105,7 +110,7 @@
             // 
             // txt_decimale
             // 
-            this.txt_decimale.Location = new System.Drawing.Point(145, 213);
+            this.txt_decimale.Location = new System.Drawing.Point(313, 195);
             this.txt_decimale.Name = "txt_decimale";
             this.txt_decimale.Size = new System.Drawing.Size(26, 20);
             this.txt_decimale.TabIndex = 7;
@@ -113,17 +118,65 @@
             // lbl_decimale
             // 
             this.lbl_decimale.AutoSize = true;
-            this.lbl_decimale.Location = new System.Drawing.Point(142, 197);
+            this.lbl_decimale.Location = new System.Drawing.Point(284, 179);
             this.lbl_decimale.Name = "lbl_decimale";
             this.lbl_decimale.Size = new System.Drawing.Size(92, 13);
             this.lbl_decimale.TabIndex = 8;
             this.lbl_decimale.Text = "Numero decimale:";
+            // 
+            // bttn_convers
+            // 
+            this.bttn_convers.Location = new System.Drawing.Point(123, 138);
+            this.bttn_convers.Name = "bttn_convers";
+            this.bttn_convers.Size = new System.Drawing.Size(124, 38);
+            this.bttn_convers.TabIndex = 9;
+            this.bttn_convers.Text = "CONVERTI IN FRAZIONE";
+            this.bttn_convers.UseVisualStyleBackColor = true;
+            this.bttn_convers.Click += new System.EventHandler(this.bttn_convers_Click);
+            // 
+            // txt_decins
+            // 
+            this.txt_decins.Location = new System.Drawing.Point(153, 103);
+            this.txt_decins.Name = "txt_decins";
+            this.txt_decins.Size = new System.Drawing.Size(60, 20);
+            this.txt_decins.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(120, 87);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Inserisci numero decimale";
+            // 
+            // bttn_elev
+            // 
+            this.bttn_elev.Location = new System.Drawing.Point(578, 101);
+            this.bttn_elev.Name = "bttn_elev";
+            this.bttn_elev.Size = new System.Drawing.Size(75, 23);
+            this.bttn_elev.TabIndex = 12;
+            this.bttn_elev.Text = "ELEVAZ";
+            this.bttn_elev.UseVisualStyleBackColor = true;
+            this.bttn_elev.Click += new System.EventHandler(this.bttn_elev_Click);
+            // 
+            // txt_ele
+            // 
+            this.txt_ele.Location = new System.Drawing.Point(598, 141);
+            this.txt_ele.Name = "txt_ele";
+            this.txt_ele.Size = new System.Drawing.Size(26, 20);
+            this.txt_ele.TabIndex = 13;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txt_ele);
+            this.Controls.Add(this.bttn_elev);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txt_decins);
+            this.Controls.Add(this.bttn_convers);
             this.Controls.Add(this.lbl_decimale);
             this.Controls.Add(this.txt_decimale);
             this.Controls.Add(this.bttn_sempl);
@@ -151,6 +204,11 @@
         private System.Windows.Forms.Button bttn_sempl;
         private System.Windows.Forms.TextBox txt_decimale;
         private System.Windows.Forms.Label lbl_decimale;
+        private System.Windows.Forms.Button bttn_convers;
+        private System.Windows.Forms.TextBox txt_decins;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button bttn_elev;
+        private System.Windows.Forms.TextBox txt_ele;
     }
 }
 
